@@ -15,7 +15,6 @@ class _MyWidgetsState extends State<MyWidgets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       bottomNavigationBar: CurvedNavigationBar(
         index: currentIndex,
         animationDuration: const Duration(milliseconds: 200),
