@@ -29,8 +29,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  carousel_slider: ^4.1.1
+  curved_navigation_bar: ^1.0.3
+  flash: ^2.0.5
+
   flutter:
     sdk: flutter
+  flutter_flushbar: ^0.0.2
+  fluttertoast: ^8.1.1
 flutter_icons:
   android: "launcher_icon"
   ios: true
@@ -41,6 +47,7 @@ flutter_icons:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_launcher_icons: ^0.11.0
+
 
 dev_dependencies:
   flutter_test:

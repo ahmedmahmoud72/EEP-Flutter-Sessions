@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ieee_session6/session2_flutter/login_screen.dart';
+import 'package:ieee_session6/session3_flutter/my_bottonnavbar.dart';
 
 main() {
   runApp(const MyApp());
@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return   MaterialApp(
+
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-    );
+      home: MyWidgets(),
+      );
   }
 }

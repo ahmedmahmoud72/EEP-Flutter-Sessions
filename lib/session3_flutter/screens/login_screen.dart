@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ieee_session6/session2_flutter/messanger_app.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import 'messanger app.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -61,14 +63,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
+                    obscureText: isPassword ? true : isPassword,
                     controller: passwordController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0)),
                       labelText: ('Password'),
                       prefixIcon: Icon(Icons.lock),
-                      suffixIcon: isPassword ? IconButton(
+                      suffixIcon: isPassword
+                          ? IconButton(
                               onPressed: () {
                                 setState(() {
                                   isPassword = !isPassword;
@@ -111,13 +114,25 @@ class _LoginScreenState extends State<LoginScreen> {
                                   color: Colors.white, fontSize: 20.0)),
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
+                              Navigator.push(
+                                  context, MaterialPageRoute(
                                     builder: (context) =>
-                                        const MessengerScreen(),
+                                        const MessengerApp(),
                                   ),
-                                  (Route<dynamic> route) => false);
+                                 );
+                              // msg: toast message.
+                              // toastLength: Duration of toast
+                              // backgroundColor: Background color to be shown.
+                              // textColor: Text color to be shown.
+                              // fontSize: Font size of toast message.
+                              Fluttertoast.showToast(
+                                  msg: "Login Successfully",
+                                  toastLength: Toast.LENGTH_LONG,
+                                  gravity: ToastGravity.BOTTOM,
+                                  backgroundColor: Colors.green,
+                                  textColor: Colors.white,
+                                  fontSize: 16
+                               );
                             }
                           }),
                     ),
